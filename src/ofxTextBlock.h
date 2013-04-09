@@ -52,7 +52,7 @@ class ofxTextBlock
         virtual ~ofxTextBlock();
 
         string          rawText;
-        ofTrueTypeFont  defaultFont;
+        ofTrueTypeFont* defaultFont;
         wordBlock       blankSpaceWord;
         float           scale;
 
@@ -68,7 +68,8 @@ class ofxTextBlock
         bool    wrapTextForceLines(int linesN);
 
         void    setLineHeight(float lineHeight);
-        void    setColor(int r, int g, int b, int a);
+        void    setColor(ofColor color);
+        void    setColor(float r, float g, float b, float a);
 
         void    draw(float x, float y);                    //Draws left align.
         void    drawLeft(float x, float y);
@@ -81,6 +82,9 @@ class ofxTextBlock
 
         float   getWidth();
         float   getHeight();
+    
+        string  name;
+        float   size;
 
     protected:
 
